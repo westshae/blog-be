@@ -5,8 +5,8 @@ export class BlogController {
   constructor(private readonly blogService: BlogService) {}
 
 
-  @Get("get")
-  get(@Query() query){
+  @Get("blog")
+  getBlog(@Query() query){
     const id = query.id;
     try{
       return this.blogService.getPost(id);
@@ -15,8 +15,18 @@ export class BlogController {
     }
   }
 
-  @Get("list")
-  getList(){
+  @Get("card")
+  getCard(@Query() query){
+    const id = query.id;
+    try{
+      return this.blogService.getPostData(id);
+    }catch(e){
+      console.error(e);
+    }
+  }
+
+  @Get("posts")
+  getPosts(){
     try{
       return this.blogService.getList();
     }catch(e){

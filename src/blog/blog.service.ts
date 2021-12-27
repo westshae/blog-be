@@ -16,6 +16,10 @@ export class BlogService{
     return this.textRepo.findOne({id:id});
   }
 
+  getPostData(id:number){
+    return this.blogRepo.findOne({id:id});
+  }
+
   getList(){
     return this.blogRepo.find();
   }
