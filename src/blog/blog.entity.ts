@@ -14,6 +14,6 @@ export class BlogEntity {
     @Column()
     author:string;
 
-    @Column()
-    date:Date;
+    @Column({ type: 'date' })
+    date:string;
 } 
