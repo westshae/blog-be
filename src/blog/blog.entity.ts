@@ -16,7 +16,4 @@ export class BlogEntity {
 
     @Column()
     date:Date;
-
-    @Column()
-    text:string;
 } 

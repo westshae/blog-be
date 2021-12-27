@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
+import { Body, Controller, Get, Query } from "@nestjs/common";
 import { BlogService } from "./blog.service";
 @Controller("blog")
 export class BlogController {
@@ -16,10 +16,9 @@ export class BlogController {
   }
 
   @Get("list")
-  getList(@Query() query){
-    const amount = query.amount;
+  getList(){
     try{
-      return this.blogService.getList(amount);
+      return this.blogService.getList();
     }catch(e){
       console.error(e);
     }
